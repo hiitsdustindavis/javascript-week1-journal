@@ -9,7 +9,9 @@ $(document).ready(function() {
     var inputtedEntry = $("#entry").val();
     var timeStamp = moment().format();
     var entry = new Entry(inputtedTitle, inputtedEntry, timeStamp);
+    entry.wordCount = entry.wordCount();
     $("#previous-entries").append(entry.formatEntry());
+
   });
 });
 
@@ -18,10 +20,16 @@ exports.Entry = function(entryTitle, entry, moment) {
   this.entryTitle = entryTitle;
   this.entry = entry;
   this.moment = moment;
+  var wordCount = 0;
 };
 
 exports.Entry.prototype.formatEntry = function() {
-  return "<li><h3>" + this.entryTitle + "</h3><p>" + this.entry + "</p><p>" + this.moment + "</p></li>";
+  return "<li><h3>" + this.entryTitle + "</h3><p>" + this.entry + "</p><p>" + this.moment + "</p><p>" + this.wordCount + "</p></li>";
+};
+
+exports.Entry.prototype.wordCount = function() {
+  var words = this.entry.split(" ");
+  return words.length;
 };
 
 },{}],3:[function(require,module,exports){

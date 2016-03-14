@@ -8,6 +8,8 @@ $(document).ready(function() {
     var inputtedEntry = $("#entry").val();
     var timeStamp = moment().format();
     var entry = new Entry(inputtedTitle, inputtedEntry, timeStamp);
+    entry.wordCount = entry.wordCount();
     $("#previous-entries").append(entry.formatEntry());
+
   });
 });
