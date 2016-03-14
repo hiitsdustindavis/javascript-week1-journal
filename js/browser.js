@@ -1,11 +1,13 @@
 var Entry = require('./journal.js').Entry;
+var moment = require('moment');
 
 $(document).ready(function() {
   $("#submit-entry").submit(function() {
     event.preventDefault();
     var inputtedTitle = $("#title").val();
     var inputtedEntry = $("#entry").val();
-    var entry = new Entry(inputtedTitle, inputtedEntry);
+    var timeStamp = moment().format();
+    var entry = new Entry(inputtedTitle, inputtedEntry, timeStamp);
     $("#previous-entries").append(entry.formatEntry());
   });
 });
