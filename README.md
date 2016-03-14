@@ -12,6 +12,30 @@ This application is a demonstration of constructors and prototypes using JavaScr
 
 Install addressBook by cloning this repository.
 
+* open empty project folder
+* `rm -rf .git`
+* `git init`
+* follow package.jason prompts for name...
+* add .js and -interface.js files
+* include dependencies for each .js file in browser-interface.js
+  - 'var obj_or_funct_name = require('./obj_or_funct_name.js').obj_or_funct_name;'
+* `mkdir build/js`
+* `npm install browserify --save-dev`
+* `npm install browserify -g`
+* `npm install gulp --save-dev`
+* `npm install gulp -g`
+* `touch js/gulpfile.js`
+* include dependency in gulpfile.js
+  - 'var gulp = require('gulp');'
+* `npm install vinyl-source-stream --save-dev`
+* include dependency in gulpfile.js
+  - var browserify = require('browserify');
+  - var source = require('vinyl-source-stream');
+  - var utilities = require('gulp-util');
+  - var del = require('del');
+  - var buildProduction = utilities.env.production;
+
+
 ## Technologies Used
 
 Application: JavaScript and jQuery
