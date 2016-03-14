@@ -7,7 +7,7 @@ $(document).ready(function() {
     var inputtedTitle = $("#title").val();
     var inputtedEntry = $("#entry").val();
     var entry = new Entry(inputtedTitle, inputtedEntry);
-    $("#previous-entries").prepend(entry.formatEntry());
+    $("#previous-entries").append(entry.formatEntry());
   });
 });
 
